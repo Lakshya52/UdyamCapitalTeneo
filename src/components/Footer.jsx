@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { services } from "../data/services";
 
 const quickLinks = [
-	{ label: "Home", href: "/#top" },
-	{ label: "Services", href: "/#services" },
-	{ label: "Insights", href: "/#insights" },
-	{ label: "Our Team", href: "/#team" },
-	{ label: "Careers", href: "/#join" },
-	{ label: "Contact", href: "/#contact" },
+	// { label: "Home", href: "/" },
+	{ label: "About", href: "/about" },
+	{ label: "Services", href: "/services" },
+	{ label: "Blogs", href: "/blogs" },
+	{ label: "News", href: "/news" },
+	{ label: "Careers", href: "/careers" },
+	{ label: "Contact", href: "/contact" },
 ];
 
 function GiantWatermark() {
@@ -28,7 +29,7 @@ function GiantWatermark() {
 			const natural = text.scrollWidth;
 			const avail = wrap.clientWidth;
 			if (natural > 0 && avail > 0) {
-				text.style.fontSize = `${(100 * avail) / natural}px`;
+				text.style.fontSize = `${Math.min((100 * avail) / natural, 200)}px`;
 			}
 		};
 
@@ -65,9 +66,9 @@ function GiantWatermark() {
 
 const Footer = () => {
 	return (
-		<footer id="contact" className="relative flex h-fit w-full flex-col justify-end overflow-hidden bg-white pt-12 text-[#04163A]">
+		<footer id="contact" className="relative flex h-fit w-full flex-col justify-end overflow-hidden bg-white  text-[#04163A]">
 			{/* link columns */}
-			<div className="relative z-10 w-full max-w-(--layout-max-width) mx-auto px-6 md:px-[100px] py-16 md:py-24 grid gap-12 md:gap-16 md:grid-cols-[2fr_1fr_1fr]">
+			<div className="relative z-10 w-full max-w-(--layout-max-width) mx-auto px-6 md:px-[100px] py-12 md:py-16 grid gap-10 md:gap-12 md:grid-cols-[2fr_1fr_1fr]">
 				{/* brand */}
 				<div>
 					<img

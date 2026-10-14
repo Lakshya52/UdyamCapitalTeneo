@@ -31,12 +31,12 @@ const ServiceDetail = () => {
 			{/* header */}
 			<div className="w-full bg-(--color-dark-blue) pt-40 pb-14">
 				<div className="w-full max-w-(--layout-max-width) mx-auto px-6 md:px-[100px]">
-					<Link
-						to="/"
+					<a
+						href="/#services"
 						className="text-white/70 font-haas text-[15px] underline underline-offset-4"
 					>
 						All services
-					</Link>
+					</a>
 					<h1 className="mt-4 text-white font-bold font-haas text-3xl md:text-[42px] leading-tight">
 						{service.title}
 					</h1>

@@ -69,11 +69,23 @@ const Landing = () => {
 							Partner Of Your <br /> Successful Business <br />{" "}
 							Journey
 						</h1>
-						<p className="text-right text-xl max-w-xl mt-20 ml-auto font-[15px] leading-[158%] font-haas">
+						<div className="mt-20 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+							<p className="text-left text-xl max-w-xl font-[15px] leading-[158%] font-haas">
 							Focused on solving Business Challenges with our
 							Expertise, Groundbreaking Solutions and a
 							Collaborative Mindset.
 						</p>
+						<a
+							href="#services"
+							className="inline-flex items-center gap-3 self-start md:self-auto shrink-0 rounded border border-white px-6 py-3 text-white font-haas font-semibold text-[15px] transition-colors duration-300 hover:bg-white hover:text-[#04163A]"
+						>
+							Explore Our Services
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+								<path d="M5 12h14" />
+								<path d="M13 6l6 6-6 6" />
+							</svg>
+						</a>
+						</div>
 					</div>
 				</div>
 
@@ -331,8 +343,8 @@ const Landing = () => {
 						opportunities for team members to grow and take their
 						place as our next generation of leaders.
 					</p>
-					<button
-						type="button"
+					<Link
+						to="/careers"
 						className="mt-8 inline-flex items-center gap-3 rounded border border-white px-6 py-3 text-white font-haas font-semibold text-[15px] transition-colors duration-300 hover:bg-white hover:text-[#051336]"
 					>
 						View Openings
@@ -350,7 +362,7 @@ const Landing = () => {
 							<path d="M5 12h14" />
 							<path d="M13 6l6 6-6 6" />
 						</svg>
-					</button>
+					</Link>
 				</div>
 			</div>
 
