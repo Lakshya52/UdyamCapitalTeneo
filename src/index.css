@@ -1,0 +1,103 @@
+/* common imports - fonts / tailwind / etc */
+@import "tailwindcss";
+
+/* ---- Local fonts ---- */
+@font-face {
+    font-family: "Cambria";
+    src: url("./fonts/cambriab.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Neue Haas Grotesk";
+    src: url("./fonts/NeueHaasGrotText-65Medium-Trial.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Times New Roman";
+    src: url("./fonts/TimesNewRomalBoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Tailwind v4 theme tokens -> generates utilities like `font-cambria`, `font-haas`, `font-times` */
+@theme {
+    --font-cambria: "Cambria", Georgia, serif;
+    --font-haas: "Neue Haas Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-times: "Times New Roman", Times, Georgia, serif;
+}
+
+
+
+/* common stylings - commonly used in different locations*/
+
+:root{
+    --color-dark-blue : #04163A;
+    --color-light-blue: #2B4FAF;
+    --color-cyan: #0D7DD4;
+    --color-purple: #6855EF;
+
+    /* layout */
+    --layout-max-width: 1366px;
+
+    /* font family variables - use anywhere via var() */
+    --font-cambria: "Cambria", Georgia, serif;
+    --font-haas: "Neue Haas Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-times: "Times New Roman", Times, Georgia, serif;
+}
+
+/* layout helper - capped centered content */
+.content-wrap {
+    width: 100%;
+    max-width: var(--layout-max-width);
+    margin-inline: auto;
+}
+
+/* font utility classes - common use across codebase */
+.font-cambria {
+    font-family: var(--font-cambria);
+}
+
+.font-haas {
+    font-family: var(--font-haas);
+}
+
+.font-times {
+    font-family: var(--font-times);
+}
+
+
+
+/* nav links - cyan underline sweep */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 2px;
+    width: 0;
+    background: var(--color-cyan);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* smooth anchor scrolling below fixed navbar */
+html {
+    scroll-behavior: smooth;
+}
+
+/* specific css styles */
